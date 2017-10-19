@@ -29,6 +29,7 @@ Return ["eat","oath"].
 > In computer science, a trie, also called digital tree and sometimes radix tree or prefix tree (as they can be searched by prefixes), is a kind of search tree—an ordered tree data structure that is used to store a dynamic set or associative array where the keys are usually strings. 
 
 ![400px-Trie_example.svg](/images/400px-Trie_example.svg.png)
+
 通过使用遍历Trie判断字符串是否符合要求，然后再通过DFS查询。
 以下是我编写的Trie的Python实现：
 
