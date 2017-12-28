@@ -1,7 +1,7 @@
 # Site navigation links
 
-- title: About
-  url: /about/
+#- title: About
+#  url: /about/
 
 - title: Articles
   url: /articles/
@@ -9,8 +9,8 @@
 - title: Blog
   url: /blog/
 
-- title: Theme Setup
-  url: /theme-setup/
+#- title: Theme Setup
+#  url: /theme-setup/
 
 - title: Search
   url: /search/
