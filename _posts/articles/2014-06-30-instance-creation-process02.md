@@ -2,7 +2,7 @@
 layout: post
 title: "OpenStack创建虚拟机流程简述02"
 description: ""
-category: OpenStack 
+category: articles 
 tags: [nova]
 ---
 在经过nova-scheduler的过滤和排序后，请求会发送到相应host的nova-compute中，调用nova.compute.manager.ComputeManager.run\_instance()：

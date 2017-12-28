@@ -2,7 +2,7 @@
 layout: post
 title: "OpenStack创建虚拟机流程简述01"
 description: ""
-category: OpenStack 
+category: articles
 tags: [nova]
 ---
 在OpenStack中，大部分操作是围绕虚拟机展开的。而在虚拟机中，最核心的操作恐怕非创建虚拟机莫属。下面，我就简单分析下OpenStack中创建虚拟机的流程。

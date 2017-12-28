@@ -2,7 +2,7 @@
 layout: post
 title: "决策树的原理及Python实现（一）ID3篇"
 description: ""
-category: MachineLearning 
+category: articles
 tags: [MachineLearning]
 ---
 

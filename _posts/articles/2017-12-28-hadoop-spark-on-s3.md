@@ -2,7 +2,7 @@
 layout: post
 title: "Hadoop/Spark on S3"
 description: ""
-category: bigdata
+category: articles
 tags: [Hadoop, Spark, Big Data]
 ---
 

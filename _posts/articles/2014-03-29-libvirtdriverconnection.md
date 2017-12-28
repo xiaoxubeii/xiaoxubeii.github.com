@@ -2,7 +2,7 @@
 layout: post
 title: "LibvirtDriver创建connection"
 description: ""
-category: OpenStack
+category: articles
 tags: [Nova, Libvirt Driver]
 ---
 ## LibvirtDriver创建connection##

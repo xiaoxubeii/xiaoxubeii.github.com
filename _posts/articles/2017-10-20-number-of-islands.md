@@ -2,7 +2,7 @@
 layout: post
 title: "Leetcode-200 Number of Islands"
 description: ""
-category: Algorithm
+category: articles
 tags: [Leetcode, Algorithm]
 ---
 

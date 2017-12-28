@@ -2,7 +2,7 @@
 layout: post
 title: "尾递归"
 description: ""
-category: Algorithm
+category: articles
 tags: [Recursion]
 ---
 尾递归指的是在一个函数的尾位置调用其本身。从形式上来说，只要函数最后的return语句返回的是函数本身，那么它就是一个尾递归。    

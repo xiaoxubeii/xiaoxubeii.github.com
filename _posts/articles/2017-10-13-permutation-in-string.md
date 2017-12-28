@@ -2,7 +2,7 @@
 layout: post
 title: "Leetcode-567 Permutation in String"
 description: ""
-category: Algorithm
+category: articles
 tags: [Leetcode, Algorithm]
 ---
 

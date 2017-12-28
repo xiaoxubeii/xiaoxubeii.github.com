@@ -2,7 +2,7 @@
 layout: post
 title: "使用libvirt创建虚拟机并使用bridge"
 description: ""
-category: Libvirt
+category: articles
 tags: [Libvirt]
 ---
 #使用libvirt创建虚拟机并使用bridge

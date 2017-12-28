@@ -2,7 +2,7 @@
 layout: post
 title: "nova compute创建虚拟机分配network"
 description: ""
-category: OpenStack
+category: articles
 tags: [Nova, Network]
 ---
 ## nova-compute创建虚拟机分配network过程 ##

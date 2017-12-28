@@ -2,7 +2,7 @@
 layout: post
 title: "openstack icehouse new future"
 description: ""
-category: OpenStack
+category: articles
 tags: []
 ---
 # OpenStack Compute(Nova)

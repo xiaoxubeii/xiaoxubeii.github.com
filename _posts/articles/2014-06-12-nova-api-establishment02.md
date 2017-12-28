@@ -2,7 +2,7 @@
 layout: post
 title: "nova-api建立流程02"
 description: ""
-category: OpenStack 
+category: articles
 tags: [nova, nova-api]
 ---
 # Compute app启动

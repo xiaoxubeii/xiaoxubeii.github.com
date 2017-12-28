@@ -2,7 +2,7 @@
 layout: post
 title: "创建自定义initramfs"
 description: ""
-category: Linux
+category: articles
 tags: [Linux initramfs]
 ---
 在Linux的启动文件中，除了名为vmlinuz的kernel内核外，还有一个名为initramfs的文件。initramfs是基于内存filesystem，实际它就是一个通过gz压缩的cpio归档文件：

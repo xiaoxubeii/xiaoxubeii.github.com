@@ -2,7 +2,7 @@
 layout: post
 title: "nova-api建立流程01"
 description: ""
-category: OpenStack 
+category: articles
 tags: [nova, nova-api]
 ---
 最近在面试的时候，被问到/etc/nova/api-paste.ini的用途。当时也是一知半解，只知道可能是nova-api启动时的配置文件。回来后仔细看了一下，才发现不是这么简单。

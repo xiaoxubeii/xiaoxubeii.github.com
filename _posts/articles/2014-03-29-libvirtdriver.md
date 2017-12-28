@@ -2,7 +2,7 @@
 layout: post
 title: "LibvirtDriver事件注册、监听"
 description: ""
-category: OpenStack
+category: articles
 tags: [Nova, Libvirt Driver]
 ---
 

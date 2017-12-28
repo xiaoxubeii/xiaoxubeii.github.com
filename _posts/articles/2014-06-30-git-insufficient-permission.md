@@ -2,7 +2,7 @@
 layout: post
 title: "git报错insufficient permission for adding an object to repository database .git/objects"
 description: ""
-category: Algorithm
+category: articles
 tags: [hash,python]
 ---
 今天在使用git commit时，发生如下情况：

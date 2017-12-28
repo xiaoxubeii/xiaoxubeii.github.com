@@ -2,7 +2,7 @@
 layout: post
 title: "It's the Manageability Stupid"
 description: ""
-category: 
+category: articles
 tags: []
 ---
 

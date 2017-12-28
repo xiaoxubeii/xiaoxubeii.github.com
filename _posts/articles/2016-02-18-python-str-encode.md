@@ -2,7 +2,7 @@
 layout: post
 title: "Python中的字符编码"
 description: ""
-category: Python
+category: articles
 tags: [Python]
 ---
 最早在Python中只支持ASCII编码，普通的字符串`'A'`在Python内部都是ASCII编码：

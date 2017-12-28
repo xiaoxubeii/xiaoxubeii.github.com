@@ -2,7 +2,7 @@
 layout: post
 title: "Leetcode-110 Balanced Binary Tree"
 description: ""
-category: Algorithm
+category: articles
 tags: [Leetcode, Algorithm]
 ---
 Given a binary tree, determine if it is height-balanced.

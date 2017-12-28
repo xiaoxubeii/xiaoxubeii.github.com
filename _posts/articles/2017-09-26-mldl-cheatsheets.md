@@ -2,7 +2,7 @@
 layout: post
 title: "十张机器学习和深度学习的速查表"
 description: ""
-category: AI
+category: articles
 tags: [MachineLearning, DeepLearning, AI]
 ---
 

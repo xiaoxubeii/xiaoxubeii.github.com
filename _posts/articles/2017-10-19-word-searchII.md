@@ -2,7 +2,7 @@
 layout: post
 title: "Leetcode-212 Word Search II"
 description: ""
-category: Algorithm
+category: articles
 tags: [Leetcode, Algorithm]
 ---
 Given a 2D board and a list of words from the dictionary, find all words in the board.

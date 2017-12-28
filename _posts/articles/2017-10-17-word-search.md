@@ -2,7 +2,7 @@
 layout: post
 title: "Leetcode-79 Word Search"
 description: ""
-category: Algorithm
+category: articles
 tags: [Leetcode, Algorithm]
 ---
 Given a 2D board and a word, find if the word exists in the grid.
