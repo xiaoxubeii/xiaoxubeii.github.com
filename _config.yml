@@ -1,9 +1,9 @@
 # Site wide configuration
 
-title: Simple Technology Blog
+title: Tim's Path
 locale: en_US
-description: A simple tech blog for fun.
-logo: site-logo.png
+description: 色、受、想、行、识
+# logo: site-logo.png
 search: true
 url: 
 
