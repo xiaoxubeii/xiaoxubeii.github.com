@@ -9,6 +9,7 @@ url:
 
 # Jekyll configuration
 
+comments: true
 permalink:   /:categories/:title/
 markdown:    kramdown
 highlighter: rouge
@@ -42,3 +43,4 @@ owner:
   twitter: xiaoxubeii
   github: xiaoxubeii
   linkedin: tim-xu-71b6a26b
+  disqus-shortname: xiaoxubeii
