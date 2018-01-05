@@ -39,8 +39,10 @@ exclude: ["lib", "config.rb", "Capfile", "config", "log", "Rakefile", "Rakefile.
 owner:
   name: Tim Xu
   avatar: bio-photo.jpg
-  email: xiaoxubeii@email.com
+  email: xiaoxubeii@gmail.com
   twitter: xiaoxubeii
   github: xiaoxubeii
   linkedin: tim-xu-71b6a26b
   disqus-shortname: xiaoxubeii
+
+
