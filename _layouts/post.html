@@ -6,6 +6,8 @@
 <head>
 {% include head.html %}
 {% seo %}
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/gitalk@1/dist/gitalk.css">
+<script src="https://cdn.jsdelivr.net/npm/gitalk@1/dist/gitalk.min.js"></script>
 </head>
 
 <body id="post">
@@ -45,10 +47,7 @@
       </footer>
       <div class="entry-content">
         {{ content }}
-        {% if site.owner.disqus-shortname and page.comments or site.comments %}
-          <div id="disqus_thread"></div><!-- /#disqus_thread -->
-          {% include disqus-comments.html %}
-        {% endif %}
+	<div id="gitalk-container"></div>
       </div><!-- /.entry-content -->
     </div><!-- /.entry-wrapper -->
     <nav class="pagination" role="navigation">
@@ -69,6 +68,19 @@
 </div><!-- /.footer-wrapper -->
 
 {% include scripts.html %}
+
+<script type="text/javascript">
+const gitalk = new Gitalk({
+  clientID: '7810014f8342deed4da0',
+  clientSecret: '4b5d630cdb5f318e8d3adbda2e61ac39bf3d4bf2',
+  repo: 'xiaoxubeii.github.com',
+  owner: 'xiaoxubeii',
+  admin: ['xiaoxubeii'],
+  distractionFreeMode: false  // Facebook-like distraction free mode
+})
+
+gitalk.render('gitalk-container')
+</script>
 
 </body>
 </html>
