@@ -26,7 +26,8 @@ lrwxrwxrwx 1 root root 0 Jun 15 23:13 user -> user:[4026531837]
 lrwxrwxrwx 1 root root 0 Jun 15 23:13 uts -> uts:[4026539031]
 ```
 
-Unfortunately we cannot use `ip netns ls` to list network namespace. Why?  
+Unfortunately we cannot use `ip netns ls` to list network namespace. Why?
+
 That is because `ip netns` will only search ns in `/var/run/netns/` directory. We can create symlinks manually:
 
 ```
