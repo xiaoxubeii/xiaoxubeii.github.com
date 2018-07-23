@@ -1,11 +1,11 @@
 ---
 layout: post
-title: "Linux I/O Models and GO Network Model"
+title: "Linux I/O Models and GO Network Model Part I: Linux I/O Models"
 description: ""
 category: articles
 tags: [Linux, GO]
 ---
-# Linux的 I/O 模型以及Go的网络模型实现
+# Linux 的 I/O 模型以及 Go 的网络模型实现
 ## 第一部分：Linux 的 I/O 模型
 在 Linux 中有五种基本的 I/O 模型，它们分别是：
 

@@ -5,9 +5,9 @@ description: ""
 category: articles
 tags: [Linux, GO]
 ---
-# Linux的 I/O 模型以及Go的网络模型实现
-## 第二部分：Go netpoller实现原理分析
-在Go中，所有的 I/O 都是阻塞的。Go 建议用户实现阻塞的 I/O 接口，并通过使用 goroutines 和 channel 实现并发。比如在 net/http 中的 HTTP server，每接受一个 connection，都会启动一个goroutines：
+# Linux 的 I/O 模型以及 Go 的网络模型实现
+## 第二部分：Go netpoller 实现原理分析
+在 Go 中，所有的 I/O 都是阻塞的。Go 建议用户实现阻塞的 I/O 接口，并通过使用 goroutines 和 channel 实现并发。比如在 net/http 中的 HTTP server，每接受一个 connection，都会启动一个goroutines：
 
 
 ```
