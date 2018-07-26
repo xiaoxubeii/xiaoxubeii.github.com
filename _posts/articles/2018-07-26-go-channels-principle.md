@@ -1,11 +1,11 @@
 ---
 layout: post
-title: "Go Channels Principle"
+title: "Simple Analysis of Go Channel"
 description: ""
 category: articles
 tags: [Linux, GO, Channel]
 ---
-# Go Channels 原理浅解读
+# Go Channels 原理浅析
 Go channels 是 Go 共享数据的首要方式。传统的线程模型，比如在 Java、C++ 或者 Python 中，线程间通信一般是通过共享内存。通常共享数据结构会受锁的保护，线程通过争抢锁来访问数据。但是 Go 提供了一种优雅而独特的方式 **channel** 来解决线程间的通信问题。
 
 Go 的这种理念源于 C.S.P 模型。CSP 全称为 Communicating Sequential Process，是一种并发编程模型，由 Tony Hoare 于 1977 年提出（ [Communicating Sequential Processes](http://www.usingcsp.com/cspbook.pdf) ）。简单来说，CSP 模型由并发执行的实体（线程或者进程）所组成，实体之间通过发送消息进行通信。这里发送消息时使用的就是通道，或者叫 channel。Go 实现了CSP 部分理论，其中goroutine 对应 CSP 的并发执行实体，channel 对应通道。
