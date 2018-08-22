@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "Golang Memory Management"
+title: "Golang Memory Management Part I: Introduce Memory"
 description: ""
 category: articles
 tags: [Linux, GO, Memory Management]
