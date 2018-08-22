@@ -29,7 +29,7 @@ tags: [Linux, GO, Memory Management]
 
 大家可能会感到奇怪，为什么上面没有提到虚拟地址空间（virtual address）。其实在 Intel IA-32 手册里并没有提到这个术语，但是在内核的确是用到了这个概念，比如 __va 和 __pa 这两个宏定义。其实虚拟地址是程序里使用的地址，也就是一个指针值，指针的本质就是 EIP 寄存器中的值。而前面提过逻辑地址中的偏移量就是 EIP 寄存器的值，也就是说虚拟地址 = 逻辑地址偏移量。而在 Linux 中，内核会将段基址设为0，也就相当于不分段了，所以在值上虚拟地址 = 线性地址。
 ## 程序是什么？
-当你在操作系统中编译程序，比如 GO，它会被编译成一个可执行机器代码文件或者库文件。这些文件是按照一定的格式生成的，比如 Linux 的 Executable and Linkable Format（ELF）或 Windows 的 Portable Executable。可执行文件除了包含一些应用的元数据，比如操作系统架构、debug 信息外，还包含以下部分：.text（代码段）、.data（全局变量）和.rodata（全局常量）。
+当你在操作系统中编译程序，比如 GO，它会被编译成一个可执行机器代码文件或者库文件。这些文件是按照一定的格式生成的，比如 Linux 的 Executable and Linkable Format（ELF）或 Windows 的 Portable Executable。可执行文件除了包含一些应用的元数据，比如操作系统架构、debug 信息外，还包含以下部分：.text（代码段）、.data（全局变量）和 .rodata（全局常量）。
 
 操作系统中有个模块叫程序加载器，可用于执行程序。在 Linux 中，我们可以通过系统调用`execve()`加载程序。当加载过程运行时，会执行以下步骤：
 
