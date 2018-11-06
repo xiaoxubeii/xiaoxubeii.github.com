@@ -13,7 +13,7 @@ tags: [Cluster management, Scheduler]
 
 ## Google Borg 简介
 
-Google Borg 是一套资源管理系统，可用于管理和调度资源。在 Borg 中，资源的单位是 **Job** 和 **Task**。**Job** 包含一组 **Task**。**Task** 是 Borg 管理和调度的最小单元，它对应一组 Linux 进程。熟悉 Kubernetes 的读者，可以将 **Job** 和 **Task** 大致对应为 Kubernetes 的 **Service** 和 **Pod**。
+Google Borg 是一套资源管理系统，可用于管理和调度资源。在 Borg 中，资源的单位是 **Job** 和 **Task**。Job 包含一组 Task。Task 是 Borg 管理和调度的最小单元，它对应一组 Linux 进程。熟悉 Kubernetes 的读者，可以将 Job 和 Task 大致对应为 Kubernetes 的 Service 和 Pod。
 
 在架构上，Borg 和 Kubernetes 类似，由 BorgMaster、Scheduler 和 Borglet 组成。
 
@@ -57,7 +57,7 @@ Borg 通过实验数据表明，小容量的 cell 通常比大容量的更占用
 Borg 对资源细粒度分配的方法，目前已是主流，在此我就不再赘述。
 
 ### Resource reclamation
-我个人感觉这部分内容对我帮助最大。了解 Kubernetes 的读者，应该对 类似的概念很熟悉，也就是 request limit。job 在提交时需要指定 resource limit，它能确保内部的 task 有足够资源可以运行。有些用户会为 task 申请过大的资源，以应对可能的请求或计算的突增。但实际上，部分资源在多数时间内是闲置的。与其资源浪费，不如利用起来。这需要系统有较精确的预测机制，可以评估 task 对实际资源的需求，并将闲置资源回收以分配给低 priority 的任务，比如 batch job。上述过程在 Borg 中被称为 **resource reclamation**，对使用资源的评估则被称为 **reservation**。Borgmaster 会定期从 Borglet 收集 resource consumption，并执行 **reservation**。在初始阶段，reservation 等于 resource limit。随着 task 的运行，reservation 就变为了资源的实际使用量，外加 safety margin。
+我个人感觉这部分内容对我帮助最大。了解 Kubernetes 的读者，应该对 类似的概念很熟悉，也就是 request limit。job 在提交时需要指定 resource limit，它能确保内部的 task 有足够资源可以运行。有些用户会为 task 申请过大的资源，以应对可能的请求或计算的突增。但实际上，部分资源在多数时间内是闲置的。与其资源浪费，不如利用起来。这需要系统有较精确的预测机制，可以评估 task 对实际资源的需求，并将闲置资源回收以分配给低 priority 的任务，比如 batch job。上述过程在 Borg 中被称为 **resource reclamation**，对使用资源的评估则被称为 **reservation**。Borgmaster 会定期从 Borglet 收集 resource consumption，并执行 reservation。在初始阶段，reservation 等于 resource limit。随着 task 的运行，reservation 就变为了资源的实际使用量，外加 safety margin。
 
 在 Borg 调度时，Scheduler 使用 resource limit 为 prod task 过滤和选择主机，这个过程并不依赖 reclaimed resource。从这个角度看，并不支持对 prod task 的资源超卖。但 non-prod task 则不同，它是占用已有 task 的 resource reservation。所以 non-prod task 会被调度到拥有 reclaimed resource 的机器上。
 
