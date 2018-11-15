@@ -5,8 +5,6 @@ description: ""
 category: articles
 tags: [Cluster management, Scheduler, Resource Sharing]
 ---
-
-# Approach to Kubernetes Resource Sharing
 最近在上海参加 Kubecon，通过交流和 session 使我对资源共享和混部有了些新的想法。先零散的记录下来，后续再整理成可行的方案和方法论。
 
 ## 现状
@@ -23,7 +21,7 @@ tags: [Cluster management, Scheduler, Resource Sharing]
 ### 资源回收和再分配
 针对第一个问题，我的想法是实现一种资源回收机制（当然借鉴了其它成熟的调度系统），它可以定期根据 Job 的实际资源使用率估算出资源消耗，回收这部分 gap 的资源分配给 Batch Job 使用。我们姑且将此过程称之为 Resource Reclamation，估算资源消耗的过程称为 Resource Consumption Prediction。计算资源消耗的算法最简单的方法是以现有资源消耗加一个 margin。
 
-![](images/15422143861089.jpg)
+![](/images/15422143861089.jpg)
 
 Exclusive Resource + Resource Reservation = Physical Machine Resource。在 Kubernetes 中，我们可以通过 Namespace Quota 定义总的 Exclusive Resource Pool，并为 Kubelet 设置 System Reservation。至于 Resource Consumption Prediction 可以通过诸如 cadvisor 或其他外部 Monitor 等手段采集计算。我们可以使用诸如 Kubernetes Operator 或者 client-go Informer 实现一个 Kubernetes Resource Reclamation Controller 定期执行以上过程。资源回收还有一个难点是回收的资源如何再分配给 Batch Job 使用。我目前估计只能修改 Kubernetes apiserver 和 scheduler，定期更新 NodeInfo 的 allocatableResource（具体实现方式还需我深入阅读相关源码后再做定夺）。
 
