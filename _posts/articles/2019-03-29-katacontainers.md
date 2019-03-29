@@ -13,14 +13,14 @@ tags: [KataContainers, MicroVM]
 
 简单总结： KataContainers 是使用轻量级虚拟机实现容器技术的开源项目，最早来源于 Intel® Clear Containers 和 Hyper runV。不过随着 Hyper 两位核心工程师加入蚂蚁金服，未来阿里在 KataContainers 会有很多的话语权。
 
-![](images/15537543761371/15537547378830.jpg)
+![](/images/15537543761371/15537547378830.jpg)
 
 KataContainers 的主要组件包括：runtime、proxy、shim、agent 和 hypervisor。
 
 ### Runtime
 `kata-runtime`是一个 OCI container runtime 实现，它和`runc`是处于同一个层面，主要负责容器的生命周期管理，包括创建、启动、执行和删除等。不过`runc`是使用 os 级别的技术实现容器，比如 Linux 的 namespace、cgroup 和 chroot 等，而`kata-runtime`是使用 VMM 创建虚拟机实现容器。
 
-![](images/15537543761371/15538400523928.jpg)
+![](/images/15537543761371/15538400523928.jpg)
 
 ### Proxy
 `kata-proxy`是外部和虚拟机或虚拟机内部容器间通信的代理，比如使用 `virtio-serial`或者`vsock`。不过在 KataContainers 1.5 以后，它的功能应该全部整合进了`containerd-shim-kata-v2`这个组件。
@@ -28,7 +28,7 @@ KataContainers 的主要组件包括：runtime、proxy、shim、agent 和 hyperv
 ### Shim
 熟悉 Kubernetes 或 containerd 的读者应该对`shim`不会陌生，`shim` 主要是作为容器的适配和代理。这块历来都是比较乱的，因为各种组织和厂家都在主推自己的标准，这导致出现了各式各样的 shim。比如 `containerd-shim`、`CRI-O conmon` 和 `CRI shim`等。并且由于传统的 `containerd-shim` 只能管理进程级别的容器，而无法管理虚拟机级别的容器。所以 KataContainers 又实现了自有的 `kata-shim`。不过 KataContainers 也实现了 [Containerd Runtime V2 (Shim API)](https://github.com/kata-containers/runtime/tree/master/containerd-shim-v2) 接口，那么在这种情况下，只需要一个 `containerd-shim-kata-v2` 组件即可。
 
-![](images/15537543761371/15538423093839.jpg)
+![](/images/15537543761371/15538423093839.jpg)
 
 ### Agent
 `kata-agent`是在虚拟机内运行的代理，用于管理容器和容器内进程。`kata-agent`可在一个虚拟机中运行一个或多个容器。比如在与 Kubernetes 集成中，一个 pod 对应一个虚拟机 sandbox，并且在其中可以运行多个容器。与 docker 集成中，`kata-agent`则只创建一个容器。
