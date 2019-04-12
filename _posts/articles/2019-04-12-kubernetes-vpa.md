@@ -1,9 +1,9 @@
 ---
 layout: post
-title: "How to implement resource relamation in Kubernetes VPA"
+title: "How to implement resource reclamation in Kubernetes VPA"
 description: ""
 category: articles
-tags: [Cluster Scheduler, Resource Relamation, Kubernetes]
+tags: [Cluster Scheduler, Resource Reclamation, Kubernetes]
 ---
 
 # 如何使用 Kubernetes VPA 实现资源动态扩展和回收
