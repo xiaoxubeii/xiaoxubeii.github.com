@@ -30,7 +30,7 @@ Kubernetes VPA 包含以下组件：
 
 以下是架构图：
 
-![](/images/15550568870543.jpg)
+![](/images/15550662807076.jpg)
 
 主要流程是：`Recommender`在启动时从`History Storage`获取历史数据，根据内置机制修改`VPA API object`资源建议值。`Updater`监听`VPA API object`，依据建议值动态修改 pod resource requests。`VPA Admission Controller`则是用于 pod 创建时修改 pod resource requests。`History Storage`则是通过`Kubernetes Metrics API`采集和存储监控数据。
 
